@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<section class="article-header-ad">
+    <div class="ad-placeholder ad-728-90">IKLAN DI BAWAH HEADER 728x90</div>
+</section>
+
+<div class="container">
+    <div class="main-layout">
+        <aside class="sidebar sidebar-left">
+            <div class="sidebar-widget">
+                <div class="ad-placeholder ad-160-600">IKLAN KIRI 160x600</div>
+            </div>
+        </aside>
+        <div class="main-content">
+            <article class="article-container">
+                {% include breadcrumb.html %}
+                <h1 class="article-title">{{ page.title }}</h1>
+                {% if page.categories.size > 0 %}<p class="post-categories-page">Kategori: {{ page.categories | join: ', ' }}</p>{% endif %}
+                <hr>
+                {% if page.image %}
+                    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="featured-image">
+                {% endif %}
+                <div class="article-content">
+                    {{ content }}
+                </div>
+            </article>
+            {% if page.previous or page.next %}
+            <nav class="post-navigation">
+                {% if page.previous %}<a href="{{ page.previous.url | relative_url }}" class="prev-post"><span>&laquo; Postingan Sebelumnya</span>{{ page.previous.title }}</a>{% endif %}
+                {% if page.next %}<a href="{{ page.next.url | relative_url }}" class="next-post"><span>Postingan Berikutnya &raquo;</span>{{ page.next.title }}</a>{% endif %}
+            </nav>
+            {% endif %}
+            <div class="facebook-comments">
+                <h4>Komentar</h4>
+                <div class="fb-comments" data-href="{{ page.url | absolute_url }}" data-width="100%" data-numposts="5"></div>
+            </div>
+        </div>
+        {% include sidebar-right.html %}
+    </div>
+</div>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v18.0&appId=YOUR_FACEBOOK_APP_ID&autoLogAppEvents=1" nonce="aBcDeFg"></script>
