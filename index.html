@@ -1,0 +1,63 @@
+---
+layout: default
+title: Beranda
+---
+<section class="article-header-ad">
+    <div class="ad-placeholder ad-728-90">IKLAN DI BAWAH HEADER 728x90</div>
+</section>
+
+<section class="search-container">
+    <input type="search" id="searchInput" placeholder="Cari artikel berdasarkan judul...">
+</section>
+
+<div class="container">
+    {% assign featured_post = site.posts.first %}
+    <section class="featured-post-container">
+        <a href="{{ featured_post.url | relative_url }}" class="featured-post">
+            <div class="featured-image-wrapper">
+                <img src="{{ featured_post.image | relative_url }}" alt="{{ featured_post.title }}">
+            </div>
+            <div class="featured-content">
+                <span class="featured-tag">ARTIKEL TERBARU</span>
+                <h2>{{ featured_post.title }}</h2>
+                <p>{{ featured_post.description | strip_html | truncatewords: 25 }}</p>
+            </div>
+        </a>
+    </section>
+
+    <div class="main-layout">
+        <aside class="sidebar sidebar-left">
+            <div class="sidebar-widget">
+                <div class="ad-placeholder ad-160-600">IKLAN KIRI 160x600</div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h3 class="latest-posts-title">Baca Juga</h3>
+            <div class="post-list">
+                {% for post in paginator.posts offset:1 %}
+                    <a href="{{ post.url | relative_url }}" class="post-item">
+                        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="post-thumbnail">
+                        <div class="post-content">
+                            {% if post.categories.size > 0 %}
+                                <p class="post-categories">{{ post.categories | join: ', ' }}</p>
+                            {% endif %}
+                            <h3 class="post-title">{{ post.title }}</h3>
+                            <p class="post-description">{{ post.description | strip_html | truncatewords: 15 }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            
+            {% if paginator.total_pages > 1 %}
+            <div class="pagination">
+                {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link prev">‹ Sebelumnya</a>{% else %}<span class="pagination-link prev disabled">‹ Sebelumnya</span>{% endif %}
+                <span class="page_number">Halaman {{ paginator.page }} dari {{ paginator.total_pages }}</span>
+                {% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link next">Berikutnya ›</a>{% else %}<span class="pagination-link next disabled">Berikutnya ›</span>{% endif %}
+            </div>
+            {% endif %}
+        </main>
+        
+        {% include sidebar-right.html %}
+    </div>
+</div>
