@@ -1,0 +1,30 @@
+# ===================================================
+# KONFIGURASI FINAL UNTUK ZUHAYRGIM.GITHUB.IO
+# ===================================================
+
+title: ZuhayrGim
+description: "Zuhayrgim provides free game mods, the latest updates, and safe direct download links for popular games."
+
+# URL utama website Anda
+url: "https://zuhayrgim.github.io"
+baseurl: "" # WAJIB KOSONG untuk tipe repo ini
+
+# --- Pengaturan URL Cantik ---
+permalink: /:slug/
+
+# --- Pengaturan Plugin ---
+# Mendaftarkan plugin yang kita gunakan
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag # Plugin SEO bawaan GitHub Pages
+
+# --- Pengaturan Pagination ---
+paginate: 5
+paginate_path: "/page/:num/"
+
+# --- Pengaturan Postingan Populer ---
+# Ganti dengan judul-judul artikel Anda yang sebenarnya
+popular_posts:
+  - "Ini Adalah Judul Postingan Pertama Anda"
+  - "Judul Postingan Populer Lainnya"
+  - "Tulis Judul Ketiga yang Juga Populer"
