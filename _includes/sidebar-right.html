@@ -1,0 +1,25 @@
+<aside class="sidebar sidebar-right">
+    <div class="sidebar-widget">
+        <h4>IKLAN</h4>
+        <div class="ad-placeholder ad-300-250">IKLAN KANAN 300x250</div>
+    </div>
+    {% if site.popular_posts.size > 0 %}
+    <div class="sidebar-widget">
+        <h4>POPULAR POSTS</h4>
+        <ul class="popular-posts-list">
+            {% for popular_title in site.popular_posts %}
+                {% for post in site.posts %}
+                    {% if post.title == popular_title %}
+                        <li>
+                            <a href="{{ post.url | relative_url }}">
+                                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="popular-post-thumbnail">
+                                <span class="popular-post-title">{{ post.title }}</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</aside>
