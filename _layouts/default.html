@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Plugin SEO Jekyll akan otomatis mengisi title, description, canonical, dll. -->
+    {% seo %}
+    
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <h1><a href="{{ '/' | relative_url }}" style="color:white; text-decoration:none;">{{ site.title }}</a></h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                <li><a href="#">Android</a></li>
+                <li><a href="#">Dekstop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+    
+    <section class="pre-footer-ad">
+        <div class="ad-placeholder ad-728-90">IKLAN SEBELUM FOOTER 728x90</div>
+    </section>
+    <nav class="footer-nav">
+        <div class="footer-links">
+            <a href="#">Disclaimer</a> &bull;
+            <a href="#">Privacy Policy</a> &bull;
+            <a href="#">Terms of Use</a>
+        </div>
+    </nav>
+    <footer>
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script>
+        if (document.getElementById('searchInput')) {
+            const searchInput = document.getElementById('searchInput');
+            const postItems = document.querySelectorAll('.post-item');
+            searchInput.addEventListener('keyup', function(event) {
+                const filter = event.target.value.toLowerCase();
+                postItems.forEach(function(item) {
+                    const title = item.querySelector('.post-title').textContent.toLowerCase();
+                    if (title.includes(filter)) { item.style.display = 'flex'; } 
+                    else { item.style.display = 'none'; }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
