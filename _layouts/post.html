@@ -2,14 +2,32 @@
 layout: default
 ---
 <section class="article-header-ad">
-    <div class="ad-placeholder ad-728-90">IKLAN DI BAWAH HEADER 728x90</div>
+   <script type="text/javascript">
+	atOptions = {
+		'key' : '2c79cc096860bf4d747e0bd6bc4dfd12',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//eyebrowcohabit.com/2c79cc096860bf4d747e0bd6bc4dfd12/invoke.js"></script>
 </section>
 
 <div class="container">
     <div class="main-layout">
         <aside class="sidebar sidebar-left">
             <div class="sidebar-widget">
-                <div class="ad-placeholder ad-160-600">IKLAN KIRI 160x600</div>
+                <script type="text/javascript">
+	atOptions = {
+		'key' : '93cb59acb627c4d29c01a163a35be4ad',
+		'format' : 'iframe',
+		'height' : 600,
+		'width' : 160,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//eyebrowcohabit.com/93cb59acb627c4d29c01a163a35be4ad/invoke.js"></script>
             </div>
         </aside>
         <div class="main-content">
@@ -21,16 +39,30 @@ layout: default
                 {% if page.image %}
                     <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="featured-image">
                 {% endif %}
-                <div class="article-content">
-                    {{ content }}
+                
+                <!-- [DIUBAH] Konten dengan penyisipan iklan otomatis -->
+                <div class="article-content" id="article-content">
+                    {% assign paragraphs = content | split: '</p>' %}
+                    {% assign paragraph_count = paragraphs | size %}
+                    {% assign ad_insertion_point = paragraph_count | divided_by: 2 %}
+
+                    {% for paragraph in paragraphs %}
+                        {{ paragraph }}</p>
+                        {% if forloop.index == ad_insertion_point %}
+                            <!-- Ini adalah placeholder untuk iklan di tengah artikel -->
+                            <div id="in-article-ad-placeholder" style="margin: 30px 0; text-align: center;"></div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </article>
+            
             {% if page.previous or page.next %}
             <nav class="post-navigation">
                 {% if page.previous %}<a href="{{ page.previous.url | relative_url }}" class="prev-post"><span>&laquo; Postingan Sebelumnya</span>{{ page.previous.title }}</a>{% endif %}
                 {% if page.next %}<a href="{{ page.next.url | relative_url }}" class="next-post"><span>Postingan Berikutnya &raquo;</span>{{ page.next.title }}</a>{% endif %}
-            </axnav>
+            </nav>
             {% endif %}
+
             <div class="facebook-comments">
                 <h4>Komentar</h4>
                 <div class="fb-comments" data-href="{{ page.url | absolute_url }}" data-width="100%" data-numposts="5"></div>
@@ -41,4 +73,25 @@ layout: default
 </div>
 
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v18.0&appId=1905798473607238&autoLogAppEvents=1" nonce="aBcDeFg"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfml=1&version=v18.0&appId=1905798473607238&autoLogAppEvents=1" nonce="aBcDeFg"></script>
+
+<!-- [BARU] SCRIPT UNTUK MENYISIPKAN IKLAN DI TENGAH ARTIKEL -->
+<script>
+    function insertInArticleAd() {
+        const adPlaceholder = document.getElementById('in-article-ad-placeholder');
+        if (adPlaceholder) {
+            const adContainer = document.createElement('div');
+            adContainer.id = 'container-79ea1b74623902479d7c01dc3fe800d9';
+            const adScript = document.createElement('script');
+            adScript.async = true;
+            adScript.setAttribute('data-cfasync', 'false');
+            adScript.src = '//eyebrowcohabit.com/79ea1b74623902479d7c01dc3fe800d9/invoke.js';
+            adPlaceholder.appendChild(adScript);
+            adPlaceholder.appendChild(adContainer);
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        insertInArticleAd();
+    });
+</script>
+<script type='text/javascript' src='//eyebrowcohabit.com/cb/f9/c9/cbf9c927afd9a094d68afbc287d4e82c.js'></script>
