@@ -16,7 +16,8 @@ permalink: /:slug/
 # Mendaftarkan plugin yang kita gunakan
 plugins:
   - jekyll-paginate
-  - jekyll-seo-tag # Plugin SEO bawaan GitHub Pages
+  - jekyll-sitemap
+  - jekyll-seo-tag 
 
 # --- Pengaturan Pagination ---
 paginate: 5
