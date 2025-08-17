@@ -16,9 +16,4 @@ Anda bisa mulai menulis paragraf di sini. Untuk membuat **teks tebal**, apit den
 ### Ini Adalah Sub-Judul
 Gunakan tanda pagar untuk membuat sub-judul. Ini membantu menstrukturkan tulisan Anda dan baik untuk SEO.
 
-<!-- Letakkan kode iklan native banner Anda di sini jika perlu -->
-<div class="in-article-ad">
-    <div class="ad-placeholder">IKLAN NATIVE BANNER</div>
-</div>
-
 Anda bisa melanjutkan tulisan Anda seperti biasa di sini.
