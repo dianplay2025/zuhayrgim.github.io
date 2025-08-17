@@ -6,6 +6,7 @@ image: "/assets/images/nama-gambar-anda.webp"
 categories:
   - Game
   - Tutorial
+download_link: "https://nama-blog-anda.blogspot.com/2025/08/download-file.html" 
 ---
 
 Selamat datang di artikel pertama Anda!
