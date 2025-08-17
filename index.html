@@ -51,7 +51,6 @@ title: Home
         </aside>
 
         <main class="main-content">
-            <h3 class="latest-posts-title">Baca Juga</h3>
             <div class="post-list">
                 {% for post in paginator.posts offset:1 %}
                     <a href="{{ post.url | relative_url }}" class="post-item">
