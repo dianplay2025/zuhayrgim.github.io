@@ -1,0 +1,69 @@
+---
+layout: default
+title: Search Results
+---
+<div class="container">
+    <div class="search-results-header">
+        <h1 id="search-results-title">Search Results</h1>
+    </div>
+    
+    <!-- Hasil pencarian akan ditampilkan di sini oleh JavaScript -->
+    <div id="search-results-list" class="post-list search-results">
+        <p>Loading search results...</p>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const resultsList = document.getElementById('search-results-list');
+    const resultsTitle = document.getElementById('search-results-title');
+
+    // 1. Ambil kata kunci dari URL
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+
+    if (query) {
+        resultsTitle.textContent = `Search results for: "${query}"`;
+
+        // 2. Muat "database" postingan
+        fetch('{{ "/search.json" | relative_url }}')
+            .then(response => response.json())
+            .then(posts => {
+                // 3. Filter postingan yang cocok
+                const results = posts.filter(post => {
+                    const title = post.title.toLowerCase();
+                    const description = post.description.toLowerCase();
+                    const searchQuery = query.toLowerCase();
+                    return title.includes(searchQuery) || description.includes(searchQuery);
+                });
+
+                // 4. Tampilkan hasilnya
+                resultsList.innerHTML = ''; // Kosongkan
+                if (results.length > 0) {
+                    results.forEach(post => {
+                        const postItem = `
+                        <a href="${post.url}" class="post-item">
+                            <img src="${post.image}" alt="${post.title}" class="post-thumbnail">
+                            <div class="post-content">
+                                <p class="post-categories">${post.categories}</p>
+                                <h3 class="post-title">${post.title}</h3>
+                                <p class="post-description">${post.description}</p>
+                            </div>
+                        </a>
+                        `;
+                        resultsList.innerHTML += postItem;
+                    });
+                } else {
+                    resultsList.innerHTML = '<p>No results found for your search.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error loading search data:', error);
+                resultsList.innerHTML = '<p>Sorry, there was an error loading the search results.</p>';
+            });
+    } else {
+        resultsTitle.textContent = "Please enter a search term.";
+        resultsList.innerHTML = '';
+    }
+});
+</script>
