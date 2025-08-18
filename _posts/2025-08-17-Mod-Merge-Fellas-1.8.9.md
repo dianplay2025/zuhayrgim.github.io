@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Free Download Mod Merge Fellas 1.8.9 – Unlimited Shakes, revives, hammer and No Iklan"
+title: "Free Download Mod Merge Fellas 1.8.9 – Unlimited Shakes, revives, hammer and No Ads"
 description: "Free Download Mod Merge Fellas 1.8.9 with unlimited shakes, revives, no ads, and many new characters. Try the new Italian brainrot 9 style now!"
 image: "/images/189.webp"
 categories:
