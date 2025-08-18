@@ -23,15 +23,6 @@ plugins:
 paginate: 7
 paginate_path: "/page/:num/"
 
-# --- [BARU] Pengaturan untuk Jekyll Archives ---
-jekyll-archives:
-  enabled:
-    - categories
-  layouts:
-    category: category.html # Template yang akan digunakan
-  permalinks:
-    category: '/categories/:name/' # Format URL (misal: /categories/android/)
-
 # --- Pengaturan Postingan Populer ---
 # Ganti dengan judul-judul artikel Anda yang sebenarnya
 popular_posts:
