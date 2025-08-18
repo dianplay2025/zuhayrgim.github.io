@@ -15,8 +15,12 @@ title: Home
 <script type="text/javascript" src="//eyebrowcohabit.com/2c79cc096860bf4d747e0bd6bc4dfd12/invoke.js"></script>
 </section>
 
+<!-- [DIUBAH] KOTAK PENCARIAN SEKARANG MENGGUNAKAN FORM -->
 <section class="search-container">
-    <input type="search" id="searchInput" placeholder="Cari artikel berdasarkan judul...">
+    <form action="/search/" method="get" class="search-form">
+        <input type="search" id="searchInput" name="q" placeholder="Find Here..." required>
+        <button type="submit" class="search-button">Search</button>
+    </form>
 </section>
 
 <!-- [BARU] KONTEN PERKENALAN HOMEPAGE -->
