@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://zuhayrgim.github.io/sitemap.xml
