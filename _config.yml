@@ -20,12 +20,11 @@ plugins:
   - jekyll-seo-tag 
 
 # --- Pengaturan Pagination ---
-paginate: 5
+paginate: 7
 paginate_path: "/page/:num/"
 
 # --- Pengaturan Postingan Populer ---
 # Ganti dengan judul-judul artikel Anda yang sebenarnya
 popular_posts:
-  - "Ini Adalah Judul Postingan Pertama Anda"
-  - "Judul Postingan Populer Lainnya"
-  - "Tulis Judul Ketiga yang Juga Populer"
+  - "Free Download Mod Merge Fellas 1.8.9 – Unlimited Shakes, revives, hammer and No Ads"
+  - "Plant VS Zombies: Free to Modify Again"
