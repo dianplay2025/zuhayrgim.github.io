@@ -4,7 +4,7 @@ title: "Plant VS Zombies: Free to Modify Again"
 description: "Plant vs Zombies never gets old! The game can be modified, and you can even adjust its speed for more fun. Discover everything here!"
 image: "/images/pvz.webp"
 categories:
-  - Dekstop
+  - dekstop
 download_link: "https://nama-blog-anda.blogspot.com/2025/08/download-file.html"
 keywords:
   - plant vs zombies
