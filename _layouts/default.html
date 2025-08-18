@@ -122,16 +122,18 @@
 
                 function typeWriter(element, text, speed, callback) {
                     let i = 0;
+                    const cursor = document.createElement('span');
+                    cursor.className = 'typing-cursor';
                     element.innerHTML = ""; // Kosongkan elemen
-                    const cursor = '<span class="typing-cursor"></span>';
-                    element.innerHTML = cursor;
+                    element.appendChild(cursor); // Tambah kursor
 
                     const typingInterval = setInterval(() => {
                         if (i < text.length) {
-                            element.childNodes[0].nodeValue += text.charAt(i);
+                            cursor.insertAdjacentText('beforebegin', text.charAt(i));
                             i++;
                         } else {
                             clearInterval(typingInterval);
+                            cursor.remove(); // Hapus kursor setelah selesai
                             if (callback) {
                                 callback();
                             }
@@ -141,7 +143,6 @@
 
                 // Mulai animasi berurutan
                 typeWriter(h2Element, h2Text, 50, () => {
-                    // Setelah H2 selesai, mulai ketik P
                     typeWriter(pElement, pText, 25, null);
                 });
             }
