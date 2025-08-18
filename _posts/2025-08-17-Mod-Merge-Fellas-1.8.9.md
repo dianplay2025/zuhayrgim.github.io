@@ -4,7 +4,7 @@ title: "Free Download Mod Merge Fellas 1.8.9 – Unlimited Shakes, revives, hamm
 description: "Free Download Mod Merge Fellas 1.8.9 with unlimited shakes, revives, no ads, and many new characters. Try the new Italian brainrot 9 style now!"
 image: "/images/189.webp"
 categories:
-  - Android
+  - android
 download_link: "https://nama-blog-anda.blogspot.com/2025/08/download-file.html"
 keywords:
   - merge fellas mod
