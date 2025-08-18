@@ -104,13 +104,49 @@
         </div>
     </nav>
     <footer>
-        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. Template Build Dian Arifin.</p>
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. Template Created by Dian Arifin.</p>
     </footer>
 
     <!-- SCRIPT IKLAN ANDA -->
     <script async src="//d.smopy.com/d/?resource=pubJS"></script>
     <script src="/zzhpryhfcfpqya.php"></script>
     <!-- AKHIR SCRIPT IKLAN -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const h2Element = document.getElementById('typing-h2');
+            const pElement = document.getElementById('typing-p');
+
+            if (h2Element && pElement) {
+                const h2Text = h2Element.getAttribute('data-text');
+                const pText = pElement.getAttribute('data-text');
+
+                function typeWriter(element, text, speed, callback) {
+                    let i = 0;
+                    element.innerHTML = ""; // Kosongkan elemen
+                    const cursor = '<span class="typing-cursor"></span>';
+                    element.innerHTML = cursor;
+
+                    const typingInterval = setInterval(() => {
+                        if (i < text.length) {
+                            element.childNodes[0].nodeValue += text.charAt(i);
+                            i++;
+                        } else {
+                            clearInterval(typingInterval);
+                            if (callback) {
+                                callback();
+                            }
+                        }
+                    }, speed);
+                }
+
+                // Mulai animasi berurutan
+                typeWriter(h2Element, h2Text, 50, () => {
+                    // Setelah H2 selesai, mulai ketik P
+                    typeWriter(pElement, pText, 25, null);
+                });
+            }
+        });
+    </script>
     <script>
     function startDownloadProcess(downloadUrl) {
         const button = document.getElementById('dynamic-download-button');
