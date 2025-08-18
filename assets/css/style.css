@@ -654,3 +654,52 @@ footer {
 .search-results-header { text-align: center; margin: 30px 0; padding-bottom: 20px; border-bottom: 1px solid #eee; }
 .search-results-header h1 { font-size: 2rem; }
 .search-results { display: block; }
+/* [BARU] Styling untuk Halaman Kategori */
+.page-header {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+.page-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.category-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.category-count {
+    background-color: #e9ecef;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #666;
+}
