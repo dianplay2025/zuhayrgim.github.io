@@ -111,7 +111,51 @@
     <!-- AKHIR SCRIPT IKLAN -->
     <script>
     function startDownloadProcess(downloadUrl) {
-        // ... kode lama dengan overlay ...
+        const button = document.getElementById('dynamic-download-button');
+        
+        // Cek jika sedang loading, jangan lakukan apa-apa
+        if (button.classList.contains('loading')) {
+            return;
+        }
+
+        const progressBar = button.querySelector('.progress-bar-inline');
+        const countdownText = document.getElementById('countdown-text');
+        
+        button.classList.add('loading'); // Tambah class 'loading' untuk menonaktifkan
+        
+        let progress = 0;
+        let countdown = 10;
+        const intervalTime = 100; // 0.1 detik
+        const totalSteps = (10 * 1000) / intervalTime;
+
+        // Tampilkan teks countdown awal
+        countdownText.textContent = `Tunggu, link unduhan akan dibuka otomatis dalam ${countdown} detik...`;
+        
+        const interval = setInterval(() => {
+            progress += 100 / totalSteps;
+            progressBar.style.width = progress + '%';
+            
+            // Update countdown setiap 1 detik
+            if ((10000 - (progress / 100 * 10000)) % 1000 < intervalTime) {
+                countdown--;
+                if (countdown >= 0) {
+                    countdownText.textContent = `Tunggu, link unduhan akan dibuka otomatis dalam ${countdown} detik...`;
+                }
+            }
+            
+            if (progress >= 100) {
+                clearInterval(interval);
+                // Buka link di tab baru setelah selesai
+                window.open(downloadUrl, '_blank');
+                
+                // Reset tombol setelah beberapa saat
+                setTimeout(() => {
+                    button.classList.remove('loading');
+                    progressBar.style.width = '0%';
+                    countdownText.textContent = "";
+                }, 500);
+            }
+        }, intervalTime);
     }
     </script>
     <script>
