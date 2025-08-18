@@ -54,23 +54,29 @@ layout: default
                         {% endif %}
                     {% endfor %}
                 </div>
-				 {% if page.download_link %}
-                <div class="download-section">
-                    <h3>Link Unduhan</h3>
-                    
-                    <!-- Tombol 1: IKLAN TETAP (Langsung dari Adsterra) -->
-                    <a href="https://eyebrowcohabit.com/zb0xd58v3?key=69da7f25435132ae533de549de70209b" class="btn-download btn-download-ad" target="_blank" rel="noopener noreferrer" title="Download Now">
-                        <span>DOWNLOAD</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-                    </a>
+				 <!-- [FINAL & DIPERBARUI] BAGIAN TOMBOL DOWNLOAD -->
+{% if page.download_link %}
+<div class="download-section">
+    <h3>Link Unduhan</h3>
+    
+    <!-- Tombol 1: IKLAN TETAP (Tidak berubah) -->
+    <a href="https://eyebrowcohabit.com/zb0xd58v3?key=69da7f25435132ae533de549de70209b" class="btn-download btn-download-ad" target="_blank" rel="noopener noreferrer" title="Download Now">
+        <span>DOWNLOAD</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+    </a>
 
-                    <!-- Tombol 2: LINK ASLI (Bisa diubah di file .md) -->
-                    <a href="{{ page.download_link | relative_url }}" class="btn-download btn-download-real" title="Download File" download>
-                        <span>DOWNLOAD</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-                    </a>
-                </div>
-                {% endif %}
+    <!-- [DIUBAH] Tombol 2: LINK ASLI (Sekarang berubah menjadi loading bar) -->
+    <div id="dynamic-download-button" class="btn-download btn-download-real" onclick="startDownloadProcess('{{ page.download_link }}')">
+        <span class="button-text">DOWNLOAD</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+        <div class="progress-bar-inline"></div>
+    </div>
+    
+    <!-- [BARU] Teks countdown akan muncul di sini -->
+    <p id="countdown-text" class="countdown-text"></p>
+</div>
+{% endif %}
+<!-- AKHIR BAGIAN TOMBOL DOWNLOAD -->
             </article>
             
             {% if page.previous or page.next %}
