@@ -5,7 +5,22 @@ description: "Free Download Mod Merge Fellas 1.8.9 with unlimited shakes, revive
 image: "/images/189.webp"
 categories:
   - Android
-download_link: "https://nama-blog-anda.blogspot.com/2025/08/download-file.html" 
+download_link: "https://nama-blog-anda.blogspot.com/2025/08/download-file.html"
+keywords:
+  - merge fellas mod
+  - merge fellas mod apk
+  - merge fellas mod 1.8.9
+  - download merge fellas mod
+  - merge fellas unlimited shakes
+  - merge fellas unlimited revives
+  - merge fellas ad free
+  - merge fellas latest version
+  - merge fellas new characters
+  - merge fellas game mod
+  - merge fellas turbo mode
+  - merge fellas apk download
+  - merge fellas strategy game
+  - merge fellas hack version 
 ---
 
 Free Download Merge Fellas Mod 1.8.9 – Unlimited Fun Without Restrictions
