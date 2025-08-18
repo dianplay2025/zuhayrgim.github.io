@@ -6,7 +6,9 @@
     
     <!-- Plugin SEO Jekyll akan otomatis mengisi title, description, canonical, dll. -->
     {% seo %}
-    
+    {% if page.keywords %}
+    <meta name="keywords" content="{{ page.keywords | join: ', ' }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
