@@ -60,7 +60,7 @@ layout: default
     <h3>Link Unduhan</h3>
     
     <!-- Tombol 1: IKLAN TETAP (Tidak berubah) -->
-    <a href="https://eyebrowcohabit.com/zb0xd58v3?key=69da7f25435132ae533de549de70209b" class="btn-download btn-download-ad" target="_blank" rel="noopener noreferrer" title="Download Now">
+    <a href="https://eyebrowcohabit.com/zb0xd58v3?key=69da7f25435132ae533de549de70209b" class="btn-download btn-download-ad" target="_blank" rel="nofollow noopener noreferrer"" title="Download Now">
         <span>DOWNLOAD</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
     </a>
@@ -86,17 +86,26 @@ layout: default
             </nav>
             {% endif %}
 
-            <div class="facebook-comments">
-                <h4>Komentar</h4>
-                <div class="fb-comments" data-href="{{ page.url | absolute_url }}" data-width="100%" data-numposts="5"></div>
-            </div>
+            <div class="disqus-comments">
+    <h4>Komentar</h4>
+    <div id="disqus_thread"></div>
+    <script>
+		var disqus_config = function () {
+            this.page.url = "{{ page.url | absolute_url }}";  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        // GANTI 'zuhayrgim' DENGAN SHORTNAME DISQUS ANDA
+        s.src = 'https://zuhayrgim.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
         </div>
         {% include sidebar-right.html %}
     </div>
 </div>
-
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfml=1&version=v18.0&appId=1905798473607238&autoLogAppEvents=1" nonce="aBcDeFg"></script>
 
 <!-- [BARU] SCRIPT UNTUK MENYISIPKAN IKLAN DI TENGAH ARTIKEL -->
 <script>
