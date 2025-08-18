@@ -128,8 +128,8 @@ header h1 {
     background: var(--card-bg-color);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    display: flex; /* Gambar di kiri, teks di kanan */
-    flex-direction: row;
+    display: flex;
+    flex-direction: row; /* Gambar di kiri, teks di kanan */
     margin-bottom: 20px;
     overflow: hidden;
     text-decoration: none;
@@ -159,7 +159,8 @@ header h1 {
     line-height: 1.4;
 }
 
-.post-categories, .post-description {
+.post-item .post-categories,
+.post-item .post-description {
     display: block; /* Pastikan terlihat di desktop */
 }
 
@@ -257,6 +258,7 @@ footer { text-align: center; padding: 20px 0; color: #777; }
     }
     .post-title {
         font-size: 1rem;
+        margin: 0;
     }
     .post-item .post-categories,
     .post-item .post-description {
