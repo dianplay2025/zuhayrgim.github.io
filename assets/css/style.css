@@ -654,3 +654,11 @@ footer {
 .search-results-header { text-align: center; margin: 30px 0; padding-bottom: 20px; border-bottom: 1px solid #eee; }
 .search-results-header h1 { font-size: 2rem; }
 .search-results { display: block; }
+.article-content img,
+.article-content iframe,
+.article-content video,
+.article-content table {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
